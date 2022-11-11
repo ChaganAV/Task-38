@@ -22,6 +22,28 @@
         Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях  {sumNegative}");*/
 
         // Functions
+        double FindMaxDouble(double[] array)
+        {
+            double max = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > max)
+                    max = array[i];
+            }
+            return max;
+        }
+
+        double FindMinDouble(double[] array)
+        {
+            double min = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                    min = array[i];
+            }
+            return min;
+        }
+
         void PrintArray(double[] array)
         {
             for (int i = 0; i < array.Length; i++)
