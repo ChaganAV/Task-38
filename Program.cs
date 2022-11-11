@@ -3,23 +3,21 @@
     private static void Main(string[] args)
     {
         int size = 5;
-        double[] arrNum = new double[size];
+        double[] arrDouble = new double[size];
         double minElem = 0;
         double maxElem = 0;
         Random rnd = new Random();
 
-        for (int i = 0; i < arrNum.Length; i++)
+        for (int i = 0; i < arrDouble.Length; i++)
         {
-            arrNum[i] = rnd.NextDouble();
+            arrDouble[i] = rnd.NextDouble();
         }
-        PrintArray(arrNum);
-
-        /*for(int i = 0; i < arrNum.Length; i++)
-        {
-            if(i%2 == 0)
-                sumNegative+= arrNum[i];
-        }
-        Console.WriteLine($"Сумма элементов, стоящих на нечётных позициях  {sumNegative}");*/
+        PrintArray(arrDouble);
+        minElem = FindMinDouble(arrDouble);
+        maxElem = FindMaxDouble(arrDouble);
+        Console.WriteLine($"Минимальный {minElem}");
+        Console.WriteLine($"Максимальный {maxElem}");
+        Console.WriteLine($"Разница между макс и мин элементами массива {maxElem-minElem}");
 
         // Functions
         double FindMaxDouble(double[] array)
@@ -35,7 +33,7 @@
 
         double FindMinDouble(double[] array)
         {
-            double min = 0;
+            double min = 1;
             for (int i = 0; i < array.Length; i++)
             {
                 if (array[i] < min)
